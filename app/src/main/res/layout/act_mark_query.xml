@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    >
+    <include
+        android:id="@+id/include"
+        layout="@layout/include_title"></include>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="计划编号:"
+            android:gravity="center_vertical|right"
+            style="@style/my_midlle_textview"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="@dimen/dp_10"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="KC-001"
+                android:gravity="center_vertical"
+                style="@style/my_midlle_textview"
+
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/main_gray_color"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="工程名称:"
+            android:gravity="center_vertical|right"
+            style="@style/my_midlle_textview"
+
+            />
+        <TextView
+            android:id="@+id/tv_observer_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="欧风新天地家园"
+            android:paddingLeft="@dimen/dp_10"
+            android:gravity="center_vertical"
+            style="@style/my_midlle_textview"
+
+            />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/main_gray_color"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="工程地址:"
+            android:gravity="center_vertical|right"
+            style="@style/my_midlle_textview"
+
+            />
+        <TextView
+            android:id="@+id/tv_observer_address"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="创业大道1号"
+            android:paddingLeft="@dimen/dp_10"
+            android:gravity="center_vertical"
+            style="@style/my_midlle_textview"
+
+            />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_20"
+        android:background="@color/main_gray_color"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/main_gray_color"
+        android:layout_marginTop="@dimen/dp_5"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="序号"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@color/table_header"
+            />
+        <View
+            android:layout_width="@dimen/dp_1"
+            android:layout_height="match_parent"
+            android:background="@color/main_gray_color"
+/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="勘察时间"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@color/table_header"
+            />
+        <View
+            android:layout_width="@dimen/dp_1"
+            android:layout_height="match_parent"
+            android:background="@color/main_gray_color"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="勘察人"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@color/table_header"
+            />
+        <View
+            android:layout_width="@dimen/dp_1"
+            android:layout_height="match_parent"
+            android:background="@color/main_gray_color"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="勘察信息"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@color/table_header"
+            />
+        <View
+            android:layout_width="@dimen/dp_1"
+            android:layout_height="match_parent"
+            android:background="@color/main_gray_color"
+            />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/include"></android.support.v7.widget.RecyclerView>
+    <com.baidu.mapapi.map.TextureMapView
+        android:id="@+id/bmapView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_120"
+        android:layout_marginTop="@dimen/dp_10"
+        >
+    </com.baidu.mapapi.map.TextureMapView>
+
+    <TextView
+        android:id="@+id/tv_mark_query_statu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="勘察结果: 正常"
+        style="@style/my_midlle_textview"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_10"
+        />
+
+</LinearLayout>
+</android.support.v4.widget.NestedScrollView>

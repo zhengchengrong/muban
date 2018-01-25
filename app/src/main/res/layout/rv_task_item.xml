@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_120"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dp_40"
+    android:paddingTop="@dimen/dp_10"
+    android:paddingRight="@dimen/dp_10"
+        android:background="@color/white"
+    >
+
+    <TextView
+        android:id="@+id/tv_task_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="工程名称"
+        android:textSize="@dimen/sp_16"
+        android:padding="@dimen/dp_4"
+        />
+    <TextView
+        android:id="@+id/tv_task_check"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="检测项目"
+        android:textSize="@dimen/sp_16"
+        android:padding="@dimen/dp_4"
+
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_4"
+        >
+    <TextView
+        android:id="@+id/tv_task_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="检测数量"
+        android:textSize="@dimen/sp_16"
+        />
+
+        <TextView
+            android:id="@+id/tv_task_down"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_16"
+            android:text="@string/task_down"
+            android:textColor="@color/white"
+            android:layout_alignParentRight="true"
+            android:background="#2083E8"
+            android:padding="@dimen/dp_4"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_centerVertical="true"
+            />
+    </RelativeLayout>
+</LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_10"
+        android:background="@color/garybg"
+        android:layout_marginTop="@dimen/dp_10"
+        />
+</LinearLayout>

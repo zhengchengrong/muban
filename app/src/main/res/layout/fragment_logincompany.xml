@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.threehmis.bjaj.widget.SuperEditText
+        android:id="@+id/ed_account"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="企业账号"
+        android:textSize="@dimen/normal_text_size"
+        app:ic_left_click="@drawable/icon_company"
+        app:ic_left_unclick="@drawable/icon_company"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.threehmis.bjaj.widget.SuperEditText
+        android:id="@+id/ed_user"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="用户账号"
+        android:textSize="@dimen/normal_text_size"
+        app:ic_left_click="@drawable/icon_user"
+        app:ic_left_unclick="@drawable/icon_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed_account" />
+
+    <com.threehmis.bjaj.widget.SuperEditText
+        android:id="@+id/ed_pass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="用户密码"
+        android:textSize="@dimen/normal_text_size"
+        app:ic_left_click="@drawable/icon_pass"
+        app:ic_left_unclick="@drawable/icon_pass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed_user" />
+
+    <com.threehmis.bjaj.widget.SuperEditText
+        android:id="@+id/ed_key"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="验证码"
+        android:textSize="@dimen/normal_text_size"
+        app:ic_left_click="@drawable/icon_key"
+        app:ic_left_unclick="@drawable/icon_key"
+        app:layout_constraintEnd_toStartOf="@+id/iv_code"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed_pass" />
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:id="@+id/iv_code"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed_pass" />
+
+    <TextView
+        android:id="@+id/tv_login"
+        style="@style/confirm_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintVertical_bias="0.432"
+        android:background="@drawable/shape_main_color"
+        android:text="登 录"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+</android.support.constraint.ConstraintLayout>

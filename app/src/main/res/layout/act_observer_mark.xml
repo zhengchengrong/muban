@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    >
+    <include
+        android:id="@+id/include"
+        layout="@layout/include_title"></include>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="计划编号:"
+            android:gravity="center_vertical|right"
+            style="@style/my_midlle_textview"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="@dimen/dp_10"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="KC-001"
+                android:gravity="center_vertical"
+                style="@style/my_midlle_textview"
+
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/main_gray_color"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="工程名称:"
+            android:gravity="center_vertical|right"
+            style="@style/my_midlle_textview"
+
+            />
+        <TextView
+            android:id="@+id/tv_observer_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="欧风新天地家园"
+            android:paddingLeft="@dimen/dp_10"
+            android:gravity="center_vertical"
+            style="@style/my_midlle_textview"
+
+            />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/main_gray_color"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="工程地址:"
+            android:gravity="center_vertical|right"
+            style="@style/my_midlle_textview"
+
+            />
+        <TextView
+            android:id="@+id/tv_observer_address"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="创业大道1号"
+            android:paddingLeft="@dimen/dp_10"
+            android:gravity="center_vertical"
+            style="@style/my_midlle_textview"
+
+            />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/main_gray_color"
+        />
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/dp_40"
+      android:background="@color/main_gray_color"
+      android:orientation="horizontal"
+      >
+
+      <View
+          android:layout_width="@dimen/dp_6"
+          android:layout_height="match_parent"
+          android:background="@color/main_color"
+/>
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:text="@string/tv_observer_mark_local"
+          android:layout_marginLeft="@dimen/dp_20"
+          android:gravity="center_vertical"
+          style="@style/my_largle_textview"
+          />
+  </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_80">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        >
+        <TextView
+            android:id="@+id/jingdu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/my_midlle_textview"
+            android:text="经度: 25.1231231"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center_horizontal"
+            />
+        <TextView
+            android:id="@+id/weidu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/my_midlle_textview"
+            android:text="纬度: 25.1231231"
+            android:layout_below="@id/jingdu"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center_horizontal"
+            />
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/iv_dingwei_flag"
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="@dimen/dp_30"
+                android:src="@drawable/dingwei_logo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_4"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_observer_mark_dingwei"
+                style="@style/my_midlle_textview"
+                android:textColor="@color/main_color"
+                android:layout_below="@+id/iv_dingwei_flag"
+                android:layout_centerHorizontal="true"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:background="@color/main_gray_color"
+        android:orientation="horizontal"
+        >
+
+        <View
+            android:layout_width="@dimen/dp_6"
+            android:layout_height="match_parent"
+            android:background="@color/main_color"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/tv_observer_mark_end"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:gravity="center_vertical"
+            style="@style/my_largle_textview"
+            />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editTextShow"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_120"
+        android:hint="@string/et_mark_input"
+        android:cursorVisible="false"
+        android:maxLength="1000"
+        android:gravity="left|top"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_10"
+        android:layout_margin="@dimen/dp_10"
+        android:background="@drawable/shape_gray"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:background="@color/main_gray_color"
+        android:orientation="horizontal"
+        >
+
+        <View
+            android:layout_width="@dimen/dp_6"
+            android:layout_height="match_parent"
+            android:background="@color/main_color"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/tv_observer_mark_pic"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:gravity="center_vertical"
+            style="@style/my_largle_textview"
+            />
+    </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_add_pic"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/dp_5"
+        >
+        <CheckBox
+            android:id="@+id/cb_check_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="该勘察任务已完结"
+            style="@style/my_small_textview"
+            android:textColor="#FF5555"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_10"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="提交"
+            style="@style/my_midlle_textview"
+            android:gravity="center_horizontal|center_vertical"
+            android:background="@drawable/shape_main_color"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:textColor="@color/white"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="取消"
+            style="@style/my_midlle_textview"
+            android:background="@drawable/shape_main_red_color"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
+</LinearLayout>
+
+
+
+</android.support.v4.widget.NestedScrollView>
