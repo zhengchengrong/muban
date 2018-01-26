@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.vondear.rxtools.R;
 import com.vondear.rxtools.view.RxToast;
-import com.vondear.rxtools.view.progress.SpinKitView;
+import com.vondear.rxtools.view.progressing.SpinKitView;
 
 /**
  * Created by Administrator on 2017/3/16.
@@ -19,7 +19,6 @@ public class RxDialogLoading extends RxDialog {
     private SpinKitView mLoadingView;
     private View mDialogContentView;
     private TextView mTextView;
-
 
     public RxDialogLoading(Context context, int themeResId) {
         super(context, themeResId);
@@ -61,7 +60,7 @@ public class RxDialogLoading extends RxDialog {
         mLoadingView.setColor(color);
     }
 
-    public void cancel(cancelType code, String str) {
+    public void cancel(RxCancelType code, String str) {
         cancel();
         switch (code) {
             case normal:
@@ -99,5 +98,5 @@ public class RxDialogLoading extends RxDialog {
         return mTextView;
     }
 
-    private enum cancelType {normal, error, success, info}
+    public enum RxCancelType {normal, error, success, info}
 }

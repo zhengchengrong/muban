@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
 
-    <com.threehmis.bjaj.widget.SuperEditText
+    <com.threehmis.xcjc.widget.SuperEditText
         android:id="@+id/ed_account"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -24,7 +24,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.threehmis.bjaj.widget.SuperEditText
+    <com.threehmis.xcjc.widget.SuperEditText
         android:id="@+id/ed_user"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed_account" />
 
-    <com.threehmis.bjaj.widget.SuperEditText
+    <com.threehmis.xcjc.widget.SuperEditText
         android:id="@+id/ed_pass"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed_user" />
 
-    <com.threehmis.bjaj.widget.SuperEditText
+    <com.threehmis.xcjc.widget.SuperEditText
         android:id="@+id/ed_key"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

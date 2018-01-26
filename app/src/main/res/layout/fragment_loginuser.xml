@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.threehmis.bjaj.widget.SuperEditText
+    <com.threehmis.xcjc.widget.SuperEditText
         android:id="@+id/ed_user"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.threehmis.bjaj.widget.SuperEditText
+    <com.threehmis.xcjc.widget.SuperEditText
         android:id="@+id/ed_pass"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

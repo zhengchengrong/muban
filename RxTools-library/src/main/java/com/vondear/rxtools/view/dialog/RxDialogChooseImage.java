@@ -8,10 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.vondear.rxtools.R;
-import com.vondear.rxtools.RxPermissionsUtils;
-import com.vondear.rxtools.RxPhotoUtils;
-import com.vondear.rxtools.interfaces.onRequestPermissionsListener;
-import com.vondear.rxtools.view.RxToast;
+import com.vondear.rxtools.RxPhotoTool;
 
 
 /**
@@ -92,15 +89,15 @@ public class RxDialogChooseImage extends RxDialog {
         initView(fragment);
     }
 
-    public TextView getTvCamera() {
+    public TextView getFromCameraView() {
         return mTvCamera;
     }
 
-    public TextView getTvFile() {
+    public TextView getFromFileView() {
         return mTvFile;
     }
 
-    public TextView getTvCancel() {
+    public TextView getCancelView() {
         return mTvCancel;
     }
 
@@ -133,39 +130,16 @@ public class RxDialogChooseImage extends RxDialog {
 
             @Override
             public void onClick(View arg0) {
-                //请求Camera权限
-                RxPermissionsUtils.requestCamera(activity, new onRequestPermissionsListener() {
-                    @Override
-                    public void onRequestBefore() {
-                        RxToast.error("请先获取相机权限");
-                    }
-
-                    @Override
-                    public void onRequestLater() {
-                        RxPhotoUtils.openCameraImage(activity);
-                        cancel();
-                    }
-                });
+                RxPhotoTool.openCameraImage(activity);
+                cancel();
             }
         });
         mTvFile.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
-                RxPermissionsUtils.requestReadExternalStorage(mContext, new onRequestPermissionsListener() {
-                    @Override
-                    public void onRequestBefore() {
-                        cancel();
-                        RxToast.error("请先获取读取SDCard权限");
-                        return;
-                    }
-
-                    @Override
-                    public void onRequestLater() {
-                        RxPhotoUtils.openLocalImage(activity);
-                        cancel();
-                    }
-                });
+                RxPhotoTool.openLocalImage(activity);
+                cancel();
             }
         });
         setContentView(dialog_view);
@@ -197,25 +171,15 @@ public class RxDialogChooseImage extends RxDialog {
             @Override
             public void onClick(View arg0) {
                 //请求Camera权限
-                RxPermissionsUtils.requestCamera(fragment.getContext(), new onRequestPermissionsListener() {
-                    @Override
-                    public void onRequestBefore() {
-
-                    }
-
-                    @Override
-                    public void onRequestLater() {
-                        RxPhotoUtils.openCameraImage(fragment);
-                        cancel();
-                    }
-                });
+                RxPhotoTool.openCameraImage(fragment);
+                cancel();
             }
         });
         mTvFile.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
-                RxPhotoUtils.openLocalImage(fragment);
+                RxPhotoTool.openLocalImage(fragment);
                 cancel();
             }
         });

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        >
+        <include
+            android:id="@+id/include"
+            layout="@layout/my_include_title"></include>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="计划编号:"
+                android:gravity="center_vertical|right"
+                style="@style/my_midlle_textview"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="@dimen/dp_10"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="KC-001"
+                    android:gravity="center_vertical"
+                    style="@style/my_midlle_textview"
+
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/main_gray_color"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="工程名称:"
+                android:gravity="center_vertical|right"
+                style="@style/my_midlle_textview"
+
+                />
+            <TextView
+                android:id="@+id/tv_observer_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="欧风新天地家园"
+                android:paddingLeft="@dimen/dp_10"
+                android:gravity="center_vertical"
+                style="@style/my_midlle_textview"
+
+                />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/main_gray_color"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="工程地址:"
+                android:gravity="center_vertical|right"
+                style="@style/my_midlle_textview"
+
+                />
+            <TextView
+                android:id="@+id/tv_observer_address"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="创业大道1号"
+                android:paddingLeft="@dimen/dp_10"
+                android:gravity="center_vertical"
+                style="@style/my_midlle_textview"
+
+                />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/main_gray_color"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:background="@color/main_gray_color"
+            android:orientation="horizontal"
+            >
+
+            <View
+                android:layout_width="@dimen/dp_6"
+                android:layout_height="match_parent"
+                android:background="@color/main_color"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/tv_observer_mark_local"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:gravity="center_vertical"
+                style="@style/my_largle_textview"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_140"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            >
+            <com.baidu.mapapi.map.TextureMapView
+                android:id="@+id/bmapView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_140"
+                >
+            </com.baidu.mapapi.map.TextureMapView>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:background="@color/main_gray_color"
+            android:orientation="horizontal"
+            >
+
+            <View
+                android:layout_width="@dimen/dp_6"
+                android:layout_height="match_parent"
+                android:background="@color/main_color"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/tv_observer_mark_pic"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:gravity="center_vertical"
+                style="@style/my_largle_textview"
+                />
+        </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_addphoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp_5"
+            >
+            <CheckBox
+                android:id="@+id/cb_check_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/my_small_textview"
+                android:text="该勘察任务已完结"
+                android:textColor="#FF5555"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            >
+            <TextView
+                android:id="@+id/tv_sign"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="签到"
+                style="@style/my_midlle_textview"
+                android:gravity="center_horizontal|center_vertical"
+                android:background="@drawable/shape_main_color"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</android.support.v4.widget.NestedScrollView>

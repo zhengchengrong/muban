@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
    >
 
-    <include layout="@layout/include_title"></include>
+    <include layout="@layout/my_include_title"></include>
 
     <com.flyco.tablayout.SegmentTabLayout
         android:id="@+id/segmentTabLayout"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.threehmis.bjaj">
+    package="com.threehmis.xcjc">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
@@ -23,6 +23,12 @@
     <!-- SD卡读取权限，用户写入离线定位数据-->
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
 
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"></uses-permission>
+    <uses-permission android:name="android.permission.READ_CONTACTS"></uses-permission>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+
     <application
         android:name=".AndroidApplication"
         android:allowBackup="true"
@@ -31,7 +37,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".module.login.LoginActicity">
+        <activity android:name=".module.login.LoginActicity"
+            android:windowSoftInputMode="adjustPan|stateHidden"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -42,7 +50,13 @@
         <activity android:name=".module.observer.LocalObserverActivity"/>
         <activity android:name=".module.observer.ObserverMarkActivity"/>
         <activity android:name=".module.observer.MarkQueryActivity"/>
-
+        <activity android:name=".module.check.LocalCheckActivity"/>
+        <activity android:name=".module.check.CheckMarkActivity"/>
+        <activity android:name=".module.progressquery.ProgessQueryActivity"/>
+        <activity android:name=".module.report.ReportVerificationActivity"/>
+        <activity android:name=".module.scenesign.SceneSignActivity"/>
+        <activity android:name=".module.check.CheckRecodeActivity"/>
+        <activity android:name=".module.contact.ContactsActivity"/>
         <!-- 百度定位配置 -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
@@ -50,6 +64,18 @@
         </meta-data>
 
         <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote"> </service>
+
+        <provider
+         android:name="android.support.v4.content.FileProvider"
+        android:authorities="com.threehmis.xcjc.fileprovider"
+        android:exported="false"
+        android:grantUriPermissions="true">
+        <meta-data
+         android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@xml/file_paths"/>
+    </provider>
+
+
     </application>
 
 </manifest>

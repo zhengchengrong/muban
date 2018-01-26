@@ -13,7 +13,7 @@
     >
     <include
         android:id="@+id/include"
-        layout="@layout/include_title"></include>
+        layout="@layout/my_include_title"></include>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_30">
@@ -131,61 +131,16 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_80">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_height="@dimen/dp_160"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_10"
         >
-        <TextView
-            android:id="@+id/jingdu"
+        <com.baidu.mapapi.map.TextureMapView
+            android:id="@+id/bmapView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/my_midlle_textview"
-            android:text="经度: 25.1231231"
-            android:layout_marginTop="@dimen/dp_10"
-            android:gravity="center_horizontal"
-            />
-        <TextView
-            android:id="@+id/weidu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/my_midlle_textview"
-            android:text="纬度: 25.1231231"
-            android:layout_below="@id/jingdu"
-            android:layout_marginTop="@dimen/dp_10"
-            android:gravity="center_horizontal"
-            />
-    </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_weight="2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-            <ImageView
-                android:id="@+id/iv_dingwei_flag"
-                android:layout_width="@dimen/dp_30"
-                android:layout_height="@dimen/dp_30"
-                android:src="@drawable/dingwei_logo"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/dp_10"
-                android:layout_marginBottom="@dimen/dp_4"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tv_observer_mark_dingwei"
-                style="@style/my_midlle_textview"
-                android:textColor="@color/main_color"
-                android:layout_below="@+id/iv_dingwei_flag"
-                android:layout_centerHorizontal="true"
-                />
-
-        </RelativeLayout>
-
+            android:layout_height="@dimen/dp_140"
+            >
+        </com.baidu.mapapi.map.TextureMapView>
     </LinearLayout>
 
     <LinearLayout
@@ -245,12 +200,10 @@
             style="@style/my_largle_textview"
             />
     </LinearLayout>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/icon_add_pic"
-        android:layout_marginLeft="@dimen/dp_10"
-        android:layout_marginTop="@dimen/dp_10"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_addphoto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         />
     <LinearLayout
         android:layout_width="wrap_content"
@@ -278,6 +231,7 @@
         android:layout_marginBottom="@dimen/dp_10"
         >
         <TextView
+            android:id="@+id/tv_commit"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -290,6 +244,7 @@
             android:textColor="@color/white"
             />
         <TextView
+            android:id="@+id/tv_cancle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"

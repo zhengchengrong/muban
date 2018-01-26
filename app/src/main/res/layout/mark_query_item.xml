@@ -38,7 +38,7 @@
             android:background="@color/main_gray_color"
             />
         <TextView
-            android:id="@+id/tv_mark_name"
+            android:id="@+id/tv_name"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -51,7 +51,7 @@
             android:background="@color/main_gray_color"
             />
         <TextView
-            android:id="@+id/tv_mark_detail"
+            android:id="@+id/tv_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"

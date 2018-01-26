@@ -29,6 +29,10 @@
     <string name="tv_observer_mark_end">勘察结果</string>
     <string name="et_mark_input">请输入内容</string>
     <string name="tv_observer_mark_pic">现场图片</string>
+    <string name="tv_progess_query_content">检测进度列表</string>
+    <string name="tv_report_verification_content">报告信息</string>
+    <string name="negative">取消</string>
+    <string name="search">搜索</string>
 
 
 </resources>

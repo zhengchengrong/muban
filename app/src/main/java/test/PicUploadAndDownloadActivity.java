@@ -17,10 +17,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.threehmis.bjaj.R;
-import com.threehmis.bjaj.utils.PicUploadUtils;
-import com.vondear.rxtools.RxCameraUtils;
-import com.vondear.rxtools.RxLogUtils;
+import com.threehmis.xcjc.R;
+import com.threehmis.xcjc.utils.PicUploadUtils;
+import com.vondear.rxtools.RxLogTool;
 
 
 import java.io.IOException;
@@ -50,7 +49,7 @@ public class PicUploadAndDownloadActivity extends Activity implements View.OnCli
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btn_pic_upload:
-                RxLogUtils.d("上传图片");
+                RxLogTool.d("上传图片");
                 if (ContextCompat.checkSelfPermission(this,
                         Manifest.permission.READ_EXTERNAL_STORAGE)
                         != PackageManager.PERMISSION_GRANTED)
