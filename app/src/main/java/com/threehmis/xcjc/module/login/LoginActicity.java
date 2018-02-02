@@ -48,8 +48,6 @@ public class LoginActicity extends BaseActivity {
 
     @Override
     protected void initViews() {
-
-
         mTvTitle.setText("登陆");
         LoginCompanyFragment lcf = new LoginCompanyFragment();
         LoginUserFragment luf = new LoginUserFragment();

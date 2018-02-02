@@ -61,8 +61,7 @@
 </LinearLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_10"
+        android:layout_height="@dimen/dp_16"
         android:background="@color/garybg"
-        android:layout_marginTop="@dimen/dp_10"
         />
 </LinearLayout>

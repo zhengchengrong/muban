@@ -35,11 +35,17 @@ public class Const {
     // 监督地列表页面 ProjectListFragment ProjectListAdapter
     public static final String PROJECTID = "projectID";
     public static final String PROJECTNAME = "projectName";
-    public static final String CUSTOMERID = "customerId";
     public static final String INTERFACEURL = "interfaceUrl";
 
     public static final String PIC_ID = "id";
     public static final String NO_SD = "SD卡不存在，无法照相!";
+    public static final String CUSTOMERID = "customerId";
+    public static final String USERACCOUNT = "userAccount";
+    public static final String BEAN = "bean";
+    public static final String PAGENUM = "pageNum";
+    public static final String PAGESIZE = "pageSize";
+    public static final String DEPDELIST = "depdeList";
+    public static final String USERLIST = "userList";
 
     private Const() {
         throw new RuntimeException("NewsConst cannot be initialized!");

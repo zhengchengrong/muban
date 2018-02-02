@@ -9,8 +9,15 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.MediaStore;
 
+import com.threehmis.xcjc.api.BaseObserver;
+import com.threehmis.xcjc.api.BaseObserverNoMvp;
 import com.threehmis.xcjc.api.RetrofitFactory;
+import com.threehmis.xcjc.api.RxSchedulers;
+import com.threehmis.xcjc.api.bean.BaseResult;
 import com.threehmis.xcjc.api.bean.PictureResult;
+import com.threehmis.xcjc.module.task.TaskActivity;
+import com.vondear.rxtools.RxLogTool;
+import com.vondear.rxtools.view.RxToast;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -19,6 +26,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
+import io.reactivex.Observable;
+import io.reactivex.ObservableTransformer;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -36,30 +45,26 @@ public class PicUploadUtils {
      * 上传图片
      * create by weiang at 2016/5/20 17:33.
      */
-    public static void upLoad(String filePath) {
+    public static void upLoad(Context context,String filePath) {
         File file =  new File(filePath);
         // 创建 RequestBody，用于封装构建RequestBody
         RequestBody requestFile =
                 RequestBody.create(MediaType.parse("multipart/form-data"),file);
 // MultipartBody.Part  和后端约定好Key，这里的partName是用image
         MultipartBody.Part body =
-                MultipartBody.Part.createFormData("uploadFile", file.getName(), requestFile);
+                MultipartBody.Part.createFormData("file", file.getName(), requestFile);
 // 添加描述
         String descriptionString = "hello, 这是文件描述";
         RequestBody description =
                 RequestBody.create(
                         MediaType.parse("multipart/form-data"), descriptionString);
 // 执行请求
-/*        Call<PictureResult>  call =  RetrofitFactory.getInstance().uploadMemberIcon(body);
-        call.enqueue(new Callback<PictureResult>() {
+/*
+        Observable<BaseResult<PictureResult>> observable =   RetrofitFactory.getInstance().uploadPic(description,body);;
+        observable.compose(RxSchedulers.<BaseResult<PictureResult>>compose()).subscribe(new BaseObserverNoMvp<PictureResult>(context) {
             @Override
-            public void onResponse(Call<PictureResult> call, Response<PictureResult> response) {
-                RxLogUtils.d(response.body().getUrl());
-            }
-
-            @Override
-            public void onFailure(Call<PictureResult> call, Throwable t) {
-
+            protected void onHandleSuccess(PictureResult pictureResult) {
+                //RxToast.showToast(pictureResult.getMessage());
             }
         });*/
 

@@ -1,19 +1,23 @@
 package com.threehmis.xcjc.module.mian.fragment;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.threehmis.xcjc.R;
+import com.threehmis.xcjc.api.BaseObserverNoMvp;
+import com.threehmis.xcjc.api.Const;
+import com.threehmis.xcjc.api.RetrofitFactory;
+import com.threehmis.xcjc.api.RxSchedulers;
+import com.threehmis.xcjc.api.TodoGroupBean;
+import com.threehmis.xcjc.api.WorkNumBean;
+import com.threehmis.xcjc.api.bean.XCJCResponseBean;
 import com.threehmis.xcjc.module.base.BaseFragment;
 import com.threehmis.xcjc.module.check.LocalCheckActivity;
 import com.threehmis.xcjc.module.contact.ContactsActivity;
@@ -22,13 +26,15 @@ import com.threehmis.xcjc.module.observer.LocalObserverActivity;
 import com.threehmis.xcjc.module.progressquery.ProgessQueryActivity;
 import com.threehmis.xcjc.module.report.ReportVerificationActivity;
 import com.threehmis.xcjc.module.task.TaskActivity;
+import com.vondear.rxtools.RxSPTool;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
+import io.reactivex.Observable;
 
 /**
  * Created by llz on 2017/11/9.
@@ -40,14 +46,13 @@ public class HomeWorkFragment extends BaseFragment {
     TextView tvTitle;
     @BindView(R.id.rv_content)
     RecyclerView rvContent;
-    Unbinder unbinder;
     private int[] icons = new int[]{R.drawable.icon_main_1, R.drawable.icon_main_2, R.drawable.icon_main_3, R.drawable.icon_main_4,
             R.drawable.icon_main_5, R.drawable.icon_main_6, R.drawable.icon_main_7};
     private String[] titles = new String[]{"任务下达", "现场勘察", "现场检测", "进度查询"
             , "报告验证", "现场签到", "通讯录"};
 
     BaseQuickAdapter mBaseQuickAdapter;
-
+    TodoGroupBean.BeanBean bean;
 
     @Override
     protected void initInjector() {
@@ -70,6 +75,18 @@ public class HomeWorkFragment extends BaseFragment {
         mBaseQuickAdapter = new BaseQuickAdapter<ItemBean, BaseViewHolder>(R.layout.lv_home_item, list) {
             @Override
             protected void convert(BaseViewHolder baseViewHolder, final ItemBean changeAddressResponBean) {
+                if(baseViewHolder.getAdapterPosition() == 0){
+                    if(bean!=null)
+                    baseViewHolder.setText(R.id.tv_num, "("+bean.getTaskAssignCount()+")");
+                }
+                if(baseViewHolder.getAdapterPosition() == 1){
+                    if(bean!=null)
+                    baseViewHolder.setText(R.id.tv_num, "("+bean.getInvestigationCount()+")");
+                }
+                if(baseViewHolder.getAdapterPosition() == 2){
+                    if(bean!=null)
+                    baseViewHolder.setText(R.id.tv_num, "("+bean.getDetectionCount()+")");
+                }
                 baseViewHolder.setText(R.id.tv_title, changeAddressResponBean.title);
                 baseViewHolder.setImageResource(R.id.iv_icon,changeAddressResponBean.getIconId());
                 baseViewHolder.getView(R.id.iv_icon).setOnClickListener(new View.OnClickListener() {
@@ -111,30 +128,32 @@ public class HomeWorkFragment extends BaseFragment {
 
         };
         rvContent.setAdapter(mBaseQuickAdapter);
+        getDatas();
     }
-
+    private void getDatas() {
+        WorkNumBean workNumBean = new WorkNumBean();
+        String customerId = RxSPTool.getString(mActivity, Const.CUSTOMERID);
+        String userAccount = RxSPTool.getString(mActivity, Const.USERACCOUNT);
+        HashMap<String,String> map = new HashMap<String,String>();
+        map.put("clManId",customerId);
+        map.put("customerId",userAccount);
+        Observable<XCJCResponseBean<TodoGroupBean>> observable =   RetrofitFactory.getInstance().getWorkNum(map);;
+        observable.compose(RxSchedulers.<XCJCResponseBean<TodoGroupBean>>compose()).subscribe(new BaseObserverNoMvp<TodoGroupBean>(getActivity()) {
+            @Override
+            protected void onHandleSuccess(TodoGroupBean pictureResult) {
+                 bean = pictureResult.getBean();
+                 mBaseQuickAdapter.notifyDataSetChanged();
+            }
+        });
+    }
     @Override
     protected void updateViews(boolean isRefresh) {
 
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        unbinder = ButterKnife.bind(this, rootView);
-        return rootView;
-    }
-
-    @Override
     protected int attachLayoutRes() {
         return R.layout.fragment_home_user;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
     }
 
 

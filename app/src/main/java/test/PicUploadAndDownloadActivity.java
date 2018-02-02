@@ -90,7 +90,7 @@ public class PicUploadAndDownloadActivity extends Activity implements View.OnCli
             Uri uri = data.getData();
             String path  = PicUploadUtils.getRealFilePath(this,uri);
             // 这样讲uri直接转Bitmap容易出现OOM
-            PicUploadUtils.upLoad(path);
+            //PicUploadUtils.upLoad(path);
         } else if (requestCode == REQUEST_CODE_CAPTURE_CAMEIA ) {
             Uri uri = data.getData();
             if(uri == null){

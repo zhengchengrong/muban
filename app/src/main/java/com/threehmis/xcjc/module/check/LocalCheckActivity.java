@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.threehmis.xcjc.R;
+import com.threehmis.xcjc.api.Const;
 import com.threehmis.xcjc.api.bean.TaskEntity;
 import com.threehmis.xcjc.module.base.BaseActivity;
 import com.vondear.rxtools.view.RxToast;
@@ -94,12 +95,13 @@ public class LocalCheckActivity extends BaseActivity {
 
         mBaseQuickAdapter = new BaseQuickAdapter<TaskEntity, BaseViewHolder>(R.layout.rv_check_item, list) {
             @Override
-            protected void convert(BaseViewHolder baseViewHolder, TaskEntity taskEntity) {
+            protected void convert(BaseViewHolder baseViewHolder, final TaskEntity taskEntity) {
                 baseViewHolder.setText(R.id.tv_observer_name, taskEntity.getProjectNum());
                 baseViewHolder.getView(R.id.tv_observer_dengji).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         Intent intent = new Intent(LocalCheckActivity.this, CheckMarkActivity.class);
+                        intent.putExtra(Const.PIC_ID,taskEntity.getProjectNum());
                         startActivity(intent);
 
                     }

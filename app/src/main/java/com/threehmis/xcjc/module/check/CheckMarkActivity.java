@@ -126,7 +126,7 @@ public class CheckMarkActivity extends BaseActivity implements IMakePic {
 
         if (!TextUtils.isEmpty(id)) {
             if (DeviceUtils.existSDCard()) {
-                String dir = Environment.getExternalStorageDirectory() + "/DCIM/" + "xcjc/";
+                String dir = Environment.getExternalStorageDirectory() + "/xcjclog/";
                 myPics = CamerUtils.GetJpgFileName(dir + id);//遍历获取该条目下所有的现场图片
                 for (int i = 0; i < myPics.size(); i++) {
                     PhotoInfo photoInfo = new PhotoInfo();
@@ -180,7 +180,8 @@ public class CheckMarkActivity extends BaseActivity implements IMakePic {
     public void takePic(final int position) {
 
         if (DeviceUtils.existSDCard()) {
-            file=new File(Environment.getExternalStorageDirectory(), "/xcjc/"+id+"/"+System.currentTimeMillis() + ".jpg");
+
+            file=new File(Environment.getExternalStorageDirectory(), "/xcjclog/"+id+"/"+System.currentTimeMillis() + ".jpg");
             if (!file.getParentFile().exists())file.getParentFile().mkdirs(); // 一定要加这句，不然在某些机型上生成不了图片
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) { //7.0及以上
                 Intent intentFromCapture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -291,16 +292,18 @@ public class CheckMarkActivity extends BaseActivity implements IMakePic {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Log.e("TAG", "---------" + FileProvider.getUriForFile(this, "com.threehmis.xcjc.fileprovider", file));
-        //mRvAddphoto.setImageBitmap(BitmapFactory.decodeFile(file.getAbsolutePath()));
-        PhotoInfo photoInfo = new PhotoInfo();
-        photoInfo.setCompressPath(file.getAbsolutePath());
-        photoInfo.setOriginalPath(file.getAbsolutePath());
-        photoInfos.add(photoInfo);
-        mMakePicAdapter.notifyDataSetChanged();
-        //在手机相册中显示刚拍摄的图片
-        Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-        Uri contentUri = Uri.fromFile(file);
-        mediaScanIntent.setData(contentUri);
+        if(resultCode == -1) {
+            Log.e("TAG", "---------" + FileProvider.getUriForFile(this, "com.threehmis.xcjc.fileprovider", file));
+            //mRvAddphoto.setImageBitmap(BitmapFactory.decodeFile(file.getAbsolutePath()));
+            PhotoInfo photoInfo = new PhotoInfo();
+            photoInfo.setCompressPath(file.getAbsolutePath());
+            photoInfo.setOriginalPath(file.getAbsolutePath());
+            photoInfos.add(photoInfo);
+            mMakePicAdapter.notifyDataSetChanged();
+            //在手机相册中显示刚拍摄的图片
+            Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+            Uri contentUri = Uri.fromFile(file);
+            mediaScanIntent.setData(contentUri);
+        }
     }
 }

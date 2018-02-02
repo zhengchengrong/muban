@@ -17,6 +17,7 @@
         android:textSize="@dimen/normal_text_size"
         app:ic_left_click="@drawable/icon_company"
         app:ic_left_unclick="@drawable/icon_company"
+        android:text="000000012"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -32,6 +33,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:hint="用户账号"
+        android:text="3hgjl"
         android:textSize="@dimen/normal_text_size"
         app:ic_left_click="@drawable/icon_user"
         app:ic_left_unclick="@drawable/icon_user"
@@ -48,6 +50,7 @@
         android:layout_marginTop="8dp"
         android:hint="用户密码"
         android:textSize="@dimen/normal_text_size"
+        android:text="888888"
         app:ic_left_click="@drawable/icon_pass"
         app:ic_left_unclick="@drawable/icon_pass"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,4 +97,11 @@
         android:text="登 录"
         app:layout_constraintRight_toRightOf="parent"
         />
+    <com.threehmis.xcjc.widget.EmptyLayout
+        android:id="@+id/empty_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        >
+    </com.threehmis.xcjc.widget.EmptyLayout>
 </android.support.constraint.ConstraintLayout>

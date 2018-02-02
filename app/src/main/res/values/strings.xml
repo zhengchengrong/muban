@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">超声波检测</string>
+    <string name="app_name">现场检测</string>
     <string name="passoruserwrong">用户名或密码错误</string>
     <string name="settings">设置</string>
     <string name="help">帮助</string>

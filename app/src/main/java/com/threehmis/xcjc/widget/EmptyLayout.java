@@ -63,7 +63,7 @@ public class EmptyLayout extends FrameLayout {
     private void init(AttributeSet attrs) {
         TypedArray a = mContext.obtainStyledAttributes(attrs, R.styleable.EmptyLayout);
         try {
-            mBgColor = a.getColor(R.styleable.EmptyLayout_background_color, Color.WHITE);
+            mBgColor = a.getColor(R.styleable.EmptyLayout_background_color, Color.TRANSPARENT);
         } finally {
             a.recycle();
         }

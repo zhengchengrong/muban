@@ -17,14 +17,28 @@
         android:layout_gravity="center"
         android:focusable="false" />
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        >
     <TextView
         tools:text="111111"
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:focusable="false"
-        android:layout_marginTop="5dp"
         android:textColor="@drawable/bg_tab_text"
         android:textSize="@dimen/normal_text_size" />
+        <TextView
+            android:id="@+id/tv_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:layout_marginLeft="@dimen/dp_4"
+            android:textColor="@color/red"
+            android:textSize="@dimen/normal_text_size" />
+    </LinearLayout>
 </LinearLayout>

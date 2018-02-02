@@ -31,7 +31,11 @@ public class RetrofitFactory {
     //    public static String url = "http://192.168.2.219:8080/app/"; // 测试服务器43/219可变主页地址切换
 //    public static  String url = "http://120.76.53.60:8099/app/"; // sanbu测试服务器
    // public static String BASE_URL = "http://120.76.53.60:8099/app/"; // 正式服务器(常用)
-    public static String BASE_URL = "http://192.169.0.213:8012/supervise_app_bjaj/";
+    // 现场检测的测试地址
+  //  public static String BASE_URL = "http://192.169.0.213:8012/supervise_app_bjaj/";
+
+    // 自己搭建的后台地址
+    public static String BASE_URL = "http://192.168.2.45:8080/APPServer/";
 //    public static String URL = "http://192.169.0.213:8012/supervise_app_bjaj/"; //基础服务器地址 菜单地址01切换
 //    public static  String MORENURL = "http://192.169.0.213:8012/supervise_app_bjaj/"; //3查询默认服务器地址*
 /*    public static String URL = "http://112.74.65.203:7788/app/"; //基础服务器地址 菜单地址01切换

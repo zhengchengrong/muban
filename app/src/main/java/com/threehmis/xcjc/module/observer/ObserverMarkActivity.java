@@ -35,6 +35,7 @@ import com.threehmis.xcjc.api.bean.GlobalConstant;
 import com.threehmis.xcjc.module.base.BaseActivity;
 import com.threehmis.xcjc.utils.CamerUtils;
 import com.threehmis.xcjc.utils.DeviceUtils;
+import com.threehmis.xcjc.utils.PicUploadUtils;
 import com.threehmis.xcjc.widget.photo.IMakePic;
 import com.threehmis.xcjc.widget.photo.OnImageUploadListener;
 import com.threehmis.xcjc.widget.photo.PhotoInfo;
@@ -161,6 +162,16 @@ public class ObserverMarkActivity extends BaseActivity implements IMakePic {
 
         mMakePicAdapter = new MakePicAdapter(this, photoInfos, this, GlobalConstant.EDIT);
         mRvAddphoto.setAdapter(mMakePicAdapter);
+
+
+        mTvCommit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // 提交
+               String path1 =  photoInfos.get(0).getCompressPath();
+               PicUploadUtils.upLoad(ObserverMarkActivity.this,path1);
+            }
+        });
     }
 
     OnImageUploadListener mImageUploadListener;
@@ -278,6 +289,7 @@ public class ObserverMarkActivity extends BaseActivity implements IMakePic {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == -1) {
             Log.e("TAG", "---------" + FileProvider.getUriForFile(this, "com.threehmis.xcjc.fileprovider", file));
             //mRvAddphoto.setImageBitmap(BitmapFactory.decodeFile(file.getAbsolutePath()));
             PhotoInfo photoInfo = new PhotoInfo();
@@ -289,5 +301,6 @@ public class ObserverMarkActivity extends BaseActivity implements IMakePic {
             Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
             Uri contentUri = Uri.fromFile(file);
             mediaScanIntent.setData(contentUri);
+        }
     }
 }
